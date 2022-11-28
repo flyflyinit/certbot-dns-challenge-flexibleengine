@@ -6,14 +6,14 @@ Certbot is a fully-featured, extensible client for the Let’s Encrypt CA (or an
 These scripts are extension to support Flexible Engine Cloud DNS provider. for generating/renewing letsencrypt certificates and loading them to FlexibleEngine Load Balancer (ELB).
 <br/>
 The diagram below describes in detail.
-<br/>
+<br/><br/>
 Make sure to have already installed Certbot client on your linux machine,
 for more details, please refer to documentation: https://certbot.eff.org/instructions
 <br/>
 these scripts are devided in two parts.
 - Script for generating the first time Letsencrypt certificate using certbot client.
 - Script for renewing the certificate (renewing script can be scheduled as cron job to run in a regular timing)
-
+<br/>
 
 
 ## Setting Env variables:
@@ -21,9 +21,9 @@ Environment variables must be setted, allowing authentication and gettig API Tok
 <br/>
 https://docs.prod-cloud-ocb.orange-business.com/en-us/api/dns/en-us_topic_0037134406.html
 
-
+<br/>
 ## Generating Certificate:
-./create.sh
+'./create.sh'
 <br/>
 by loading first environment variable (environment-variables.sh) and running certbot command.
 <br/>
@@ -39,15 +39,18 @@ This will run the authenticator.sh script, attempt the validation, and then run 
 <br/>
 more details, please refer to documentation: https://eff-certbot.readthedocs.io/en/stable/using.html
 
+<br/>
 
 ## Renewing Certificate:
-./renew.sh
+'./renew.sh'
 <br/>
 The 'renew.sh' script will attempt to renew certificate previously obtained for the specified domain. and load it to FlexibleEngine ELB
 (domain, and auth credentials... will be retrieved from env variables script)
+<br/>
 
 ## Diagram:
 ![alt text](diagram.png)
+<br/>
 
 ## Links:
 - API authentication: https://docs.prod-cloud-ocb.orange-business.com/en-us/api/dns/en-us_topic_0037134406.html
