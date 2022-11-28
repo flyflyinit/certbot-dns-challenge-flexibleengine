@@ -44,6 +44,8 @@ more details, please refer to documentation: https://eff-certbot.readthedocs.io/
 The 'renew.sh' script will attempt to renew certificate previously obtained for the specified domain. and load it to FlexibleEngine ELB
 (domain, and auth credentials... will be retrieved from env variables script)
 
+## Diagram:
+![alt text](diagram.png)
 
 ## Links:
 - API authentication: https://docs.prod-cloud-ocb.orange-business.com/en-us/api/dns/en-us_topic_0037134406.html
