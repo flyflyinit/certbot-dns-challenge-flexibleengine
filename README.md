@@ -21,7 +21,7 @@ Environment variables must be setted, allowing authentication and gettig API Tok
 <br/>
 https://docs.prod-cloud-ocb.orange-business.com/en-us/api/dns/en-us_topic_0037134406.html
 
-<br/>
+
 ## Generating Certificate:
 './create.sh'
 <br/>
