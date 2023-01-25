@@ -2,16 +2,16 @@
 # Make sure to well preserve this env variables as it contains sensitive data.
 # Make sure to restrict access to this file.
 
-DNS_DOMAIN="test.domain.test.fe.domain";
-DNS_ZONE="XXXXXX";
-LISTENER_ID="XXXXXX";
+DNS_DOMAIN="domain.fqdn.flexibleengine.test";
+DNS_ZONE_ID="XXXXXXXXXXXXX";
+LISTENER_ID="XXXXXXXXXXXXX";
 REGION="eu-west-0"
-BASE_ENDPOINT="prod-cloud-ocb.orange-business.com"
-USER_NAME="user.name"
-USER_PASSWORD='pass.word'
-DOMAIN_NAME="OCB000XXXX"
-PROJECT_ID="XXXXXXX"
-GLOBAL_PROJECT_ID="XXXXXX"
+USER_NAME="XXXXXXXXXXXXX"
+USER_PASSWORD='XXXXXXXXXXXXX'
+DOMAIN_NAME="XXXXXXXXXXXXX"
+PROJECT_ID="XXXXXXXXXXXXX"
 ELB_EIP="X.X.X.X"
-CERTIFICATE_NAME="Certificate-name"
+CERTIFICATE_NAME="Certificate_name"
+
+BASE_ENDPOINT="prod-cloud-ocb.orange-business.com"
 TOKEN_HEADER_PREFIX='X-Subject-Token: '
