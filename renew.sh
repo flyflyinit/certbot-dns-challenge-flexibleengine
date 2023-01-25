@@ -25,7 +25,7 @@ TOKEN=$(curl -sSL -D - --request POST "https://iam.$REGION.$BASE_ENDPOINT/v3/aut
 
 # Loading Certificate and Private key in env variables.
 PRIVATE_KEY=$(echo \"`sed -E 's/$/\\\n/g' /etc/letsencrypt/live/$DNS_DOMAIN/privkey.pem`\" | sed -E 's/ //g' | sed -E 's/BEGINPRIVATEKEY/BEGIN PRIVATE KEY/g' | sed -E 's/ENDPRIVATEKEY-----\\n/END PRIVATE KEY-----/g')
-CERTIFICATE=$(echo \"`sed -E 's/$/\\\n/g' /etc/letsencrypt/live/$DNS_DOMAIN/cert.pem`\" | sed -E 's/ //g' | sed -E 's/BEGINCERTIFICATE/BEGIN CERTIFICATE/g' | sed -E 's/ENDCERTIFICATE-----\\n/END CERTIFICATE-----/g')
+CERTIFICATE=$(echo \"`sed -E 's/$/\\\n/g' /etc/letsencrypt/live/$DNS_DOMAIN/fullchain.pem`\" | sed -E 's/ //g' | sed -E 's/BEGINCERTIFICATE/BEGIN CERTIFICATE/g' | sed -E 's/ENDCERTIFICATE-----/END CERTIFICATE-----/g')
 
 
 # Loading Certificate and Private key in ELB.
@@ -37,7 +37,7 @@ CERTIFICATE_ID=$( eval $CURL_CMD | python3 -c "import sys,json;print(json.load(s
 echo "ELB Certificate ID: $CERTIFICATE_ID"
 
 
-# Updating ELB HTTPS LISTENER to use the newly generated server certificat.
+# Updating ELB HTTPS LISTENER to use the newly generated server certificate.
 echo "Assigning CERTIFICATE to ELB Listener..";
 CURL_CMD=$(echo curl --location --request PUT "'"https://elb.$REGION.$BASE_ENDPOINT/v3/$PROJECT_ID/elb/listeners/$LISTENER_ID?Content-Type=application/json"'" --header "'"X-Auth-Token: $TOKEN"'" --header "'"Content-Type: application/json"'" --data-raw "'"{\"listener\" : {\"default_tls_container_ref\" : \"$CERTIFICATE_ID\"}}"'");
 eval $CURL_CMD && echo 'Done!';

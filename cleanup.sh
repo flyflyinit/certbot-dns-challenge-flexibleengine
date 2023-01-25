@@ -19,4 +19,4 @@ fi
 
 # Remove the challenge TXT record from the zone
 echo "Removing TXT record.."
-curl --location --request DELETE "https://dns.$BASE_ENDPOINT/v2/zones/$DNS_ZONE/recordsets/$RECORD_ID" --header "X-Auth-Token: $TOKEN" 
+curl --location --request DELETE "https://dns.$BASE_ENDPOINT/v2/zones/$DNS_ZONE_ID/recordsets/$RECORD_ID" --header "X-Auth-Token: $TOKEN" 
