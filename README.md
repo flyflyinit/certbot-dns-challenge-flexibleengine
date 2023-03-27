@@ -49,7 +49,7 @@ The 'renew.sh' script will attempt to renew certificate previously obtained for 
 <br/>
 
 ## Diagram:
-![alt text](diagram.png)
+![alt text](doc/diagram/diagram.png)
 <br/>
 
 ## Links:
