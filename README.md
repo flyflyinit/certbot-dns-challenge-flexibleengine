@@ -1,6 +1,4 @@
 # certbot-dns-challenge-flexibleengine
-Flexible Engine is a global France public cloud solution based on OpenStack technology. It is aimed at European companies of all sizes, especially those with an international presence. https://www.orange-business.com/en/products/flexible-engine
-<br/><br/>
 Certbot is a fully-featured, extensible client for the Let’s Encrypt CA (or any other CA that speaks the ACME protocol) that can automate the tasks of obtaining certificates and configuring webservers to use them. This client runs on Unix-based operating systems.
 <br/><br/>
 These scripts are extension to support Flexible Engine Cloud DNS provider. for generating/renewing letsencrypt certificates and loading them to FlexibleEngine Load Balancer (ELB).
